@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Photos{
     var PhtotoList:[Photo]
@@ -18,4 +19,9 @@ struct Photo{
     var Url:String
     var Name:String
     var ZipUrl:String
+}
+
+struct UIImageColor{
+    var Image:UIImage
+    var Color:UIColor
 }

@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Photos
 
 struct MainView: View {
+    @State private var authorizationStatus = PHPhotoLibrary.authorizationStatus()
     var body: some View {
+       
         TabView(){
-            
             TodayView().tabItem {
                 Image(systemName: "doc.text.image.fill")
                 Text("today")
@@ -25,9 +27,11 @@ struct MainView: View {
                 Image(systemName: "checklist")
                 Text("todo")
             }.background(.mySurface)
-            
         }.accentColor(.myTertiary)
+        
     }
+    
+    
 }
 
 #Preview {

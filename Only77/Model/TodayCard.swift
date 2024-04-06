@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 struct TodayCard: Identifiable {
     var id = UUID().uuidString
     var name: String
-    var photo: String
+    var photos: [UIImageColor]
     var title:String
     var title2:String
 }

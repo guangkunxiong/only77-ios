@@ -51,7 +51,7 @@ struct ImgView:View {
                 content
                     .scaleEffect(
                         x: phase.isIdentity ? 1.0 : 0.98,
-                        y: phase.isIdentity ? 1.0 : 0.95)
+                        y: phase.isIdentity ? 1.0 : 0.97)
             }
         
     }

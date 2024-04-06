@@ -12,11 +12,12 @@ import DominantColor
 struct TodayView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     
-    private var tadayCards:[TodayCard] = [
-        TodayCard(name: "今日图片", photo: "Image333", title: "今日图片", title2: "快来看看今天的图片吧"),
-        TodayCard(name: "纪念日图片", photo: "Image222", title: "一百天纪念日图片", title2: "一百天纪念日图片的标题"),
-        
-    ]
+    @State var today = TodayCard(name: "今日图片", photos: [UIImageColor(Image: UIImage(named:"Image222")!,Color:UIColor(hex: "#E3BEC6"))], title: "今日图片", title2: "快来看看今天的图片吧")
+    
+    @State private var todoItems: [ToDoItem] = [ToDoItem(name: "AAAA"),ToDoItem(name: "AAAA"),ToDoItem(name: "AAAA")]
+    
+    @State var todayImages=[UIImageColor]()
+    @State private var selection = 0
     
     @State var currentItem: TodayCard?
     @State var showDetailPage: Bool = false
@@ -24,52 +25,43 @@ struct TodayView: View {
     @State var animationView: Bool = false
     @State var animateContent: Bool = false
     @State var scrollOffset: CGFloat = 0
+    @State var bgColor: Color=Color(UIColor.white)
     
     var body: some View {
         @State var gridItem: [GridItem] = Array(repeating: .init(.flexible()), count: columns)
         
-        let image = UIImage(named: "Image222")!
-        let dominantColors = image.dominantColors()
-        let uiColor = dominantColors.first ?? UIColor.white
-        let bgColor = Color(uiColor)
-        var hSpacing: CGFloat {
-            10.0
-        }
+        var hSpacing: CGFloat { 10.0}
         
         ScrollView(.vertical, showsIndicators: false) {
             TopBarView(name: "Today")
             
             LazyVGrid(columns:gridItem){
+                Button{
+                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                        currentItem = today
+                    }
+                }label: {
+                    HItemView(todays: today,columns: columns) .scaleEffect(currentItem?.id == today.id && showDetailPage ? 1 : 0.99)
+                }.buttonStyle(TodayButtonStyle()) .scaleEffect(showDetailPage ? 1 : 0.99)
                 
-                ForEach(tadayCards){ item in
-                    Button{
-                        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                            showDetailPage = true
-                            currentItem = item
-                        }
-                    }label: {
-                        HItemView(today: item,columns: columns) .scaleEffect(currentItem?.id == item.id && showDetailPage ? 1 : 0.98)
-                    }.buttonStyle(TodayButtonStyle()) .scaleEffect(showDetailPage ? 1 : 0.98)
+                TotoView().padding(.top)
+            }.task{
+                todayImages = await GetDayImgae()
+                if  todayImages.count>0 {
+                    today.photos=todayImages
                 }
-                
-                TotoTabView(bgColor: bgColor.opacity(0.8)).padding(.top)
-                
-            }
-        }.overlay{
-            if let currentItem = currentItem, showDetailPage {
-                TodayPhotoView(currentItem:currentItem,showDetailPage:$showDetailPage,animationView:$animationView,animateContent:$animateContent,scrollOffset:$scrollOffset)
-                    .ignoresSafeArea(.container, edges: .top)
+                bgColor = Color(uiColor: today.photos[0].Color)
             }
         }
         .safeAreaPadding(.horizontal) .scrollIndicators(.hidden)
-        
     }
+    
     private var columns: Int {
         sizeClass == .compact ? 1 : 2
     }
     
     @ViewBuilder
-    func HItemView(today: TodayCard,columns:Int) -> some View {
+    func HItemView(todays: TodayCard,columns:Int) -> some View {
         
         var hSpacing: CGFloat {
             10.0
@@ -80,17 +72,28 @@ struct TodayView: View {
         var stackPadding: CGFloat {
             10.0
         }
-        let image = UIImage(named:today.photo)!
-        let dominantColors = image.dominantColors()
-        let uiColor = dominantColors.first ?? UIColor.white
-        let bgColor = Color(uiColor)
         
         ZStack(){
             GeometryReader{ geometry in
-                Image(today.photo)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width,height: geometry.size.height).clipped()
+                VStack{
+                    TabView(selection: $selection) {
+                        ForEach(Array(today.photos.enumerated()), id: \.offset) { index, image in
+                            Image(uiImage: image.Image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width:geometry.size.width,height: geometry.size.height)
+                                .clipped()
+                                .tag(index)
+                        }
+                    }
+                    .scrollTargetBehavior(.viewAligned)
+                    .scrollIndicators(.hidden)
+                    .tabViewStyle(PageTabViewStyle())
+                    .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                    .onChange(of: selection) { oldValue, newValue in
+                        bgColor = Color(uiColor: today.photos[selection].Color)
+                    }
+                }
                 
                 VStack{
                     Spacer()
@@ -100,13 +103,16 @@ struct TodayView: View {
                             Text(today.title2).font(.caption).foregroundColor(.secondary)
                         }
                         Spacer()
-                        Button{
-                            // todo
-                        }label: {
-                            Image(systemName: "icloud.and.arrow.up") .font(.title3).foregroundColor(.white)
-                        }
                         
-                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding().background(Color(bgColor))
+                        Button{
+                            
+                        }label: {
+                            NavigationLink(destination: PhtotoUpdateView()){
+                                Image(systemName: "icloud.and.arrow.up") .font(.title3).foregroundColor(.white)
+                            }
+                            
+                        }
+                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding().background(bgColor).animation(.easeIn(duration: 1), value: bgColor)
                 }
             }
         }.aspectRatio(heroRatio, contentMode: .fit)
@@ -116,21 +122,17 @@ struct TodayView: View {
             .clipShape(.rect(cornerRadius: 20.0))
             .matchedGeometryEffect(id: today.id, in: animation)
     }
-}
-
-
-struct TotoTabView:View {
-    @State var bgColor :Color
-    @State private var selection = Set<String>()
-    let todoItems: [ToDoItem] = [ToDoItem(name: "AAAA"),ToDoItem(name: "AAAA"),ToDoItem(name: "AAAA")]
     
-    var body: some View {
+    @ViewBuilder
+    func TotoView()-> some View {
+        @State  var selection = Set<String>()
         List {
             ForEach(todoItems) { todoItem in
                 ToDoListRow(todoItem: todoItem)
             }
-        } .listStyle(.automatic).listRowSpacing(5).frame(minWidth: 0,maxWidth: .infinity,minHeight: 200,maxHeight:200).background(.myTertiary.opacity(0.5)).scrollContentBackground(.hidden).clipShape(.rect(cornerRadius: 20.0))
+        } .listStyle(.automatic).listRowSpacing(5).frame(minWidth: 0,maxWidth: .infinity,minHeight: 200,maxHeight:200).background(bgColor).animation(.easeIn(duration: 1), value: bgColor).scrollContentBackground(.hidden).clipShape(.rect(cornerRadius: 20.0))
     }
+    
 }
 
 struct ToDoListRow: View {

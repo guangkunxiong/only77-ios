@@ -11,6 +11,8 @@
 		6410C4582B73283D00693931 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6410C4572B73283D00693931 /* TodayView.swift */; };
 		6428AE782B760E780042251A /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428AE772B760E780042251A /* CheckboxStyle.swift */; };
 		6428AE7A2B760EB80042251A /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428AE792B760EB80042251A /* TodoItem.swift */; };
+		645DCD8B2BBFE90100542D44 /* PhtotoUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645DCD8A2BBFE90100542D44 /* PhtotoUpdateView.swift */; };
+		645DCD8D2BBFEC6200542D44 /* PrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645DCD8C2BBFEC6200542D44 /* PrimaryColor.swift */; };
 		6466F2E72B7334870033175E /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466F2E62B7334870033175E /* TopBarView.swift */; };
 		647C45B72B6A7158001A3C72 /* Only77App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C45B62B6A7158001A3C72 /* Only77App.swift */; };
 		647C45BB2B6A7158001A3C72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647C45BA2B6A7158001A3C72 /* Assets.xcassets */; };
@@ -27,6 +29,10 @@
 		647C45F02B6DBF83001A3C72 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C45EF2B6DBF83001A3C72 /* Device.swift */; };
 		64B481522B6E090B0079ADD6 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B481512B6E090B0079ADD6 /* PhotoDetailView.swift */; };
 		64B481552B7316C70079ADD6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B481542B7316C70079ADD6 /* OrientationManager.swift */; };
+		64D3995C2BB4672D00B2442E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D3995B2BB4672D00B2442E /* LoginView.swift */; };
+		64EDD0C82BB8ED5800EB4081 /* TodayImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0C72BB8ED5800EB4081 /* TodayImage.swift */; };
+		64EDD0CA2BB8EF7A00EB4081 /* PistCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0C92BB8EF7A00EB4081 /* PistCheck.swift */; };
+		64EDD0CC2BB91E3800EB4081 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0CB2BB91E3800EB4081 /* DateExtension.swift */; };
 		64F97ED12B7DF83C00C9999B /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 64F97ED02B7DF83C00C9999B /* DominantColor */; };
 		64F97ED62B7E0A2600C9999B /* TodayButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F97ED52B7E0A2600C9999B /* TodayButtonStyle.swift */; };
 		64F97ED92B7E228000C9999B /* TodayPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F97ED82B7E228000C9999B /* TodayPhotoView.swift */; };
@@ -57,6 +63,9 @@
 		6410C4572B73283D00693931 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		6428AE772B760E780042251A /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 		6428AE792B760EB80042251A /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		645DCD8A2BBFE90100542D44 /* PhtotoUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhtotoUpdateView.swift; sourceTree = "<group>"; };
+		645DCD8C2BBFEC6200542D44 /* PrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryColor.swift; sourceTree = "<group>"; };
+		645DCD8E2BC0D54000542D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6466F2E62B7334870033175E /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		647C45B32B6A7158001A3C72 /* Only77.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Only77.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647C45B62B6A7158001A3C72 /* Only77App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Only77App.swift; sourceTree = "<group>"; };
@@ -76,6 +85,10 @@
 		647C45EF2B6DBF83001A3C72 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		64B481512B6E090B0079ADD6 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		64B481542B7316C70079ADD6 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
+		64D3995B2BB4672D00B2442E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		64EDD0C72BB8ED5800EB4081 /* TodayImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayImage.swift; sourceTree = "<group>"; };
+		64EDD0C92BB8EF7A00EB4081 /* PistCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PistCheck.swift; sourceTree = "<group>"; };
+		64EDD0CB2BB91E3800EB4081 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		64F97ED22B7DF9F800C9999B /* Only77.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Only77.entitlements; sourceTree = "<group>"; };
 		64F97ED52B7E0A2600C9999B /* TodayButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayButtonStyle.swift; sourceTree = "<group>"; };
 		64F97ED82B7E228000C9999B /* TodayPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPhotoView.swift; sourceTree = "<group>"; };
@@ -113,6 +126,8 @@
 		6428AE6E2B75D8DA0042251A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				64EDD0CB2BB91E3800EB4081 /* DateExtension.swift */,
+				645DCD8C2BBFEC6200542D44 /* PrimaryColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -151,6 +166,8 @@
 		647C45B52B6A7158001A3C72 /* Only77 */ = {
 			isa = PBXGroup;
 			children = (
+				645DCD8E2BC0D54000542D44 /* Info.plist */,
+				64D398A92BB4614400B2442E /* Packges */,
 				64F97ED22B7DF9F800C9999B /* Only77.entitlements */,
 				6428AE6E2B75D8DA0042251A /* Extension */,
 				647C45EC2B6BD9D3001A3C72 /* Model */,
@@ -199,6 +216,8 @@
 				647C45EA2B6BCAC6001A3C72 /* TodoView.swift */,
 				64B481542B7316C70079ADD6 /* OrientationManager.swift */,
 				64F97EDA2B7E365900C9999B /* DemoSwiftUIView.swift */,
+				64D3995B2BB4672D00B2442E /* LoginView.swift */,
+				64EDD0C92BB8EF7A00EB4081 /* PistCheck.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,13 +239,22 @@
 			children = (
 				647C45E82B6BCAA7001A3C72 /* PhotoView.swift */,
 				64B481512B6E090B0079ADD6 /* PhotoDetailView.swift */,
+				645DCD8A2BBFE90100542D44 /* PhtotoUpdateView.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		64D398A92BB4614400B2442E /* Packges */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packges;
 			sourceTree = "<group>";
 		};
 		64F97ED72B7E20A700C9999B /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				64EDD0C72BB8ED5800EB4081 /* TodayImage.swift */,
 				6410C4572B73283D00693931 /* TodayView.swift */,
 				64F97ED82B7E228000C9999B /* TodayPhotoView.swift */,
 			);
@@ -317,11 +345,12 @@
 			};
 			buildConfigurationList = 647C45AE2B6A7157001A3C72 /* Build configuration list for PBXProject "Only77" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 647C45AA2B6A7157001A3C72;
 			packageReferences = (
@@ -370,10 +399,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6428AE782B760E780042251A /* CheckboxStyle.swift in Sources */,
+				64EDD0CC2BB91E3800EB4081 /* DateExtension.swift in Sources */,
 				647C45EE2B6BD9EE001A3C72 /* Photo.swift in Sources */,
 				647C45C02B6A7158001A3C72 /* Persistence.swift in Sources */,
+				645DCD8D2BBFEC6200542D44 /* PrimaryColor.swift in Sources */,
+				64EDD0C82BB8ED5800EB4081 /* TodayImage.swift in Sources */,
 				647C45EB2B6BCAC6001A3C72 /* TodoView.swift in Sources */,
 				647C45B72B6A7158001A3C72 /* Only77App.swift in Sources */,
+				64EDD0CA2BB8EF7A00EB4081 /* PistCheck.swift in Sources */,
 				647C45E92B6BCAA7001A3C72 /* PhotoView.swift in Sources */,
 				647C45E62B6A71EA001A3C72 /* MainView.swift in Sources */,
 				6410C4582B73283D00693931 /* TodayView.swift in Sources */,
@@ -384,9 +417,11 @@
 				64B481552B7316C70079ADD6 /* OrientationManager.swift in Sources */,
 				64F97EDB2B7E365900C9999B /* DemoSwiftUIView.swift in Sources */,
 				64B481522B6E090B0079ADD6 /* PhotoDetailView.swift in Sources */,
+				64D3995C2BB4672D00B2442E /* LoginView.swift in Sources */,
 				6410C4562B73199800693931 /* User.swift in Sources */,
 				64F97EDD2B7E36E500C9999B /* CustomCornerView.swift in Sources */,
 				64F97EDF2B7E378A00C9999B /* TodayCard.swift in Sources */,
+				645DCD8B2BBFE90100542D44 /* PhtotoUpdateView.swift in Sources */,
 				64F97ED62B7E0A2600C9999B /* TodayButtonStyle.swift in Sources */,
 				64F97ED92B7E228000C9999B /* TodayPhotoView.swift in Sources */,
 			);
@@ -477,6 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -534,6 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -556,6 +593,8 @@
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Only77/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -588,6 +627,8 @@
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Only77/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -617,6 +658,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yukun-xie.Only77Tests";
@@ -637,6 +679,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yukun-xie.Only77Tests";
@@ -656,6 +699,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yukun-xie.Only77UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -674,6 +718,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DS925K5GK8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App 需要您的同意才可以访问相册";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yukun-xie.Only77UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

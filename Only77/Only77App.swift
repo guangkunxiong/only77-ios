@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct Only77App: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            LoginView()
+                .preferredColorScheme(.light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
     }
 }

@@ -14,7 +14,6 @@ struct PhotoView: View {
         
         @State var gridItem: [GridItem] = Array(repeating: .init(.flexible()), count: columns)
         
-        
         NavigationStack{
             ScrollView{
                 TopBarView(name: "Photo")
